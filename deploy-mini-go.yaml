@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-go
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-go
+  template:
+    metadata:
+      labels:
+        app: app-go
+    spec:
+      containers:
+        - name: mini-go-service
+          image: martooo/app-go:v4
+          ports:
+            - containerPort: 8080
+          env:
+            - name: PUERTO
+              valueFrom:
+                configMapKeyRef:
+                  name: configmap-port
+                  key: PORT
