@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: configmap-port
 data:
-  PORT: "8080"
+  PORT: "8878"
