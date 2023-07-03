@@ -23,3 +23,10 @@ spec:
                 configMapKeyRef:
                   name: configmap-port
                   key: PORT
+          volumeMounts:
+            - mountPath: "/home/storage/"
+              name: storage
+      volumes:
+        - name: storage
+          persistentVolumeClaim:
+            claimName: pvc-mini-go
