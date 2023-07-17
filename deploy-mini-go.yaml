@@ -3,7 +3,13 @@ kind: Deployment
 metadata:
   name: app-go
 spec:
-  replicas: 10
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  minReadySeconds: 2
   selector:
     matchLabels:
       app: app-go
@@ -14,7 +20,7 @@ spec:
     spec:
       containers:
         - name: mini-go-service
-          image: martooo/app-go:v4
+          image: martooo/mini-go:v1
           ports:
             - containerPort: 8080
           env:

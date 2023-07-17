@@ -7,6 +7,6 @@ spec:
     app: app-go
   ports:
     - protocol: TCP
-      port: 8080
-      targetPort: 8080
+      port: 9747
+      targetPort: 8878
   type: NodePort

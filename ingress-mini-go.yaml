@@ -16,4 +16,4 @@ spec:
            service:
              name: app-go-svc
              port:
-               number: 8080
+               number: 9747
