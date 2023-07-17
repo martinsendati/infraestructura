@@ -45,6 +45,16 @@ spec:
               value: /var/lib/grafana/plugins
             - name: GF_PATHS_PROVISIONING
               value: /etc/grafana/provisioning
+            - name: USER
+              valueFrom:
+                secretKeyRef:
+                  name: credenciales
+                  key: user
+            - name: PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: credenciales
+                  key: password
           ports:
             - containerPort: 3000
               name: http-grafana
