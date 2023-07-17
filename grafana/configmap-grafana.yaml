@@ -17,11 +17,12 @@ data:
     [smtp]
     enabled = true
     host = smtp.gmail.com:465
-    user = martin.barrionuevo@sendati.com
-    password = dsyvntvmrtmjipvj
+    user = ${USER}
+    password = ${PASSWORD}
     skip_verify = true
-    from_address = martin.barrionuevo@sendati.com
+    from_address = ${USER}
     from_name = Grafana
+    
 kind: ConfigMap
 metadata:
   name: grafana
